@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="30000">
+        <setting id="view_mode" label="30001" type="enum" default="0"
+                 lvalues="30002|30003"/>
+
+        <setting id="icon_scale" label="30004" type="enum" default="0"
+                 lvalues="30005|30006"/>
+        <setting id="text_scale" label="30007" type="enum" default="0"
+                 lvalues="30008|30009|30006"/>
+        <setting id="easter_egg" type="bool" default="false" visible="false"/>
+
+        <!-- Opciones Visuales y Accesibilidad -->
+        <setting label="30010" type="lsep"/>
+        <setting id="colorBackground" label="30011" type="enum" default="0"
+                 lvalues="30012|30013|30014|30015"/>
+        <setting id="colorSelection" label="30016" type="enum" default="0"
+                 lvalues="30017|30018|30019|30020|30021|30022"/>
+        <setting id="colorMultiselect" label="30023" type="enum" default="0"
+                 lvalues="30024|30025|30019|30026"/>
+        <setting id="colorblindMode" label="30027" type="bool" default="false"/>
+    </category>
+    <category label="30028">
+        <setting id="enable_audit_log" label="30029" type="bool" default="false"/>
+    </category>
+</settings>

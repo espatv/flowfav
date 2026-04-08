@@ -81,7 +81,8 @@ This is the simplest method as it does not require manually downloading external
 - **PIN Protection:** Blocks access to the editor or profiles with a numeric code and intelligent session locking.
 - **Rescue System:** If you forget your password, you can recover it via your security question. As a last resort, the system will detect if you create a file named `reset_pass.txt` in the addon's data folder, automatically removing protection without deleting your profiles.
 - **Audit Log:** Internal log of critical actions for total control.
-- **Backup System:** Comprehensive tools to create backups and restore your `favourites.xml` file.
+- **Health Check System:** Includes an advanced scanner to automatically identify and clean up broken links caused by uninstalled addons.
+- **Atomic Backup System:** Robust tools to create backups and restore your `favourites.xml` file, utilizing atomic file writes to ensure data integrity and prevent corruption even during system crashes.
 
 > **And much more...** Flow FavManager is in constant development, regularly adding new features and improvements. Discover it for yourself!
 
