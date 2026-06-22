@@ -46,36 +46,79 @@ This is the simplest method as it does not require manually downloading external
 
 ## 🧩 Features
 
-### 1. Advanced List and Profile Management
-- **Multi-Profile System:** Create and manage unlimited profiles (independent JSON files) to separate environments (e.g., "Kids", "Sports", "Movies").
-- **Import and Export:** Easily share profiles or move them between devices using XML files.
-- **System Templates:** Includes predefined and editable lists with shortcuts to sections and useful Kodi commands.
-- **Dynamic Widget:** Specialized path (`/widget`) to integrate your favorites as clean folders into widgets of advanced skins (Aura, Arctic, Titan, etc.).
 
-### 2. Visual Editing and Customization
-- **Pop-up Editor:** User-friendly and fast interface to edit your favorites' properties.
-- **Total Customization:** Change text color, apply formatting (bold/italics), and adjust font and icon sizes.
-- **Icon Management:** Automatic icon assignment or manual selection of custom images.
-- **Separator Bars:** Insert divider lines or texts to visually organize your lists.
-- **Accessibility:** Allows interface scaling and includes high-contrast modes and adapted palettes.
+#### 1. List and Profile Management
+*   **Multi-Profile System:** Create, save and load multiple profiles, each stored as an independent JSON file. This keeps separate sets of favourites for different uses (e.g. kids, sports, films).
+*   **Predefined Templates:** Load pre-defined favourite lists to populate a new Kodi installation.
+*   **Template Editor:** Create, edit, import, export and reset your own template categories and items, not just the bundled ones.
+*   **Quick Save:** Update the active profile without going through the confirmation menus.
+*   **Import and Export:** Share profiles or move them between devices as XML files. Each profile can also be exported individually to its own XML file, and renamed or deleted from the same menu.
+*   **Profile Browser:** Navigate a profile's contents as a standard Kodi folder without loading it as your active favourites.
+*   **Dynamic Widget (Clean View Path):** A dedicated `/widget` path that exposes favourites as plain folders, intended to feed home-screen widgets in skins such as Aura, Arctic and Titan without the management buttons.
 
-### 3. Organization and Automation
-- **Sorting:** Allows for quick and simple sorting of favorites.
-- **Bulk Operations:** Select multiple items (Multi-selection) to move, delete, or color in groups.
-- **Automatic Grouping:** Intelligent algorithm that groups favorites by their source Addon with a single click.
-- **Sorting and Search:** Sorting tools (A-Z, Z-A, Reverse) and real-time text filtering to quickly locate content.
+#### 2. Security and Privacy
+*   **PIN Protection:** Lock the addon behind a numeric PIN, requested when you open Flow FavManager.
+*   **Session Lock:** Once authenticated during a Kodi session, the addon does not ask for the PIN again until the session ends.
+*   **Security Question:** An optional, user-configured recovery method to restore access if the PIN is forgotten.
+*   **Rescue Mechanism:** An emergency `RESET_FILE` to recover access without losing data if the password is lost.
+*   **Audit Log:** Internal logging of critical actions: security changes, profile deletions and failed access attempts.
 
-### 4. Creation and Manipulation
-- **Manual Creation and Editing:** Create favorites from scratch by typing the path, edit existing commands, or duplicate entries.
-- **Addon Selector:** Integrated search to add favorites from any installed addon without leaving the editor.
-- **Global Context Menu:** Add content to Flow FavManager from anywhere in Kodi using the context menu (right-click).
-- **Compatibility Maximizer:** Automatically corrects problematic URLs to ensure all favorites execute correctly.
+#### 3. Bulk Organization and Automation Tools
+*   **Flexible Reordering:** Reorder items in the visual editor with four selectable modes: swap two items, insert before, insert after, or move with the up/down arrows.
+*   **Quick Move (per item):** From the context menu of any item in the advanced editor, jump it 1, 5 or 10 positions up/down, or send it straight to the top or bottom of the list.
+*   **Multiselect Mode:** Select multiple favourites at once (checkbox style) to perform batch actions.
+*   **Group Operations:**
+    *   **Bulk Move:** Move a block of favourites to a new position in one operation (e.g. 20 channels from position 100 to position 1).
+    *   **Bulk Delete:** Select and remove multiple items at once.
+    *   **Bulk Coloring:** Apply a label colour to a whole selected group.
+*   **Automatic Grouping:** Scans the list and regroups favourites by their source addon (e.g. all Netflix items together, all YouTube items together).
+*   **Bulk Sorting:** Sort the whole list alphabetically (A-Z / Z-A) or reverse the current order.
+*   **Profile Search:** Search by name across all your saved profiles and open any matching favourite directly.
 
-### 5. Security and Maintenance
-- **PIN Protection:** Blocks access to the editor or profiles with a numeric code and intelligent session locking.
-- **Rescue System:** If you forget your password, you can recover it via your security question. As a last resort, the system will detect if you create a file named `reset_pass.txt` in the addon's data folder, automatically removing protection without deleting your profiles.
-- **Audit Log:** Internal log of critical actions for total control.
-- **Backup System:** Comprehensive tools to create backups and restore your `favourites.xml` file.
+#### 4. Deep Visual Editing and Customization
+*   **Label Styling:** Change the text colour of individual favourites, or apply bold, italic or uppercase formatting.
+*   **Separator Bars:** Insert visual separators (lines or text with no action) to divide the list into sections. When deleting a separator you can remove just the separator or the whole section beneath it.
+*   **Icon Management:**
+    *   **Automatic Enrichment:** Attempts to find and assign icons to favourites that lack one.
+    *   **Manual Change:** Pick a custom image for any favourite from local storage.
+*   **Accessibility Mode:** Settings to improve visibility, such as high-contrast modes and adapted palettes (e.g. colour-blind mode).
+
+#### 5. Advanced Creation and Manipulation
+*   **Manual Item Creation:** Create a favourite from scratch by entering the label and the path (URL/command) manually, for users who know Kodi's internal paths.
+*   **Entry Duplication:** Clone an existing favourite to create variations of the same channel or path.
+*   **Path Editing:** Edit the command or URL of an existing favourite without deleting and recreating it.
+*   **Addon Selector:** A built-in browser to locate and add favourites from any installed addon without leaving the editor.
+*   **Global Context Menu:** Add content to a profile from any Kodi list (movies, channels, music) through the context menu (right click), without opening the addon.
+*   **Compatibility Maximizer:** Internal logic (`build_list_item`) that normalises problematic URLs (scripts, commands without quotes) so favourites remain runnable, working around limitations of Kodi's favourites format.
+
+#### 6. Complete Backup System
+*   **Backup/Restore:** Create full backups of the `favourites.xml` file and restore them at any time.
+
+#### 7. Web Remote Control (New in v2.0.0)
+*   **Browser-Based Management:** Access and organise favourites from any device on the local network (PC, phone, tablet) through a responsive web interface.
+*   **Interactive Actions:** Move favourites up/down, rename and delete items, with modal dialogs and toast notifications.
+*   **Artwork Loading:** Shows each favourite's cover/thumbnail artwork, served through a proxy that resolves Kodi image URLs.
+*   **Visual Customization:** Adapts to the system's dark or light mode automatically.
+
+#### 8. Auto-start Favourites on Startup (New in v2.0.0)
+*   **Startup Launcher:** Configure up to three favourites (addons, lists, commands) to launch automatically when Kodi starts.
+
+#### 9. Main Menu Redesign (New in v2.0.0)
+*   **Custom White Icons:** Replaced the generic Kodi icons with custom white Material icons.
+*   **Visual Style:** Simplified the colour scheme to white typography.
+
+#### 10. Add Editor to Favourites (New in v2.0.0)
+*   **Quick Shortcut Option:** A settings option to add the advanced editor directly to Kodi favourites.
+
+#### 11. Quick Editor
+*   **Dialog-Based Editing:** A lightweight editor built on plain Kodi dialogs (no graphical window) to move, rename and delete favourites; handy on low-power devices or for a fast change.
+
+#### 12. Additional Tools
+*   **Open Kodi Favourites:** A shortcut that opens Kodi's native favourites window (picking the right one for your Kodi version).
+*   **Save and Reload:** Reload the active profile and clear the texture cache so updated icons show up immediately.
+*   **Multi-language Interface** 
+
+#### 13. Bug Fixes (v2.0.0)
 
 > **And much more...** Flow FavManager is in constant development, regularly adding new features and improvements. Discover it for yourself!
 
